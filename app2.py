@@ -69,7 +69,7 @@ def plot_avg_likes_per_week(likes_over_time):
 # Streamlit Application
 st.title('Instagram Influencer Analysis')
 
-brand_user_id = "17841463032400206"
+brand_user_id = os.getenv("INSTAGRAM_USER_ID")
 influencer_username = st.text_input('Enter Influencer Username:')
 submit = st.button("Get analysis")
 
