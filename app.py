@@ -14,7 +14,45 @@ from utils.plot_utils import (
 load_dotenv()
 access_token = os.getenv('ACCESS_TOKEN')
 
-st.title('Instagram Influencer Analysis')
+st.title('Instagram buDDY - Product by DrillDown')
+
+import streamlit as st
+
+# Define the markdown content for each feature
+feature_overviews = {
+    "Choose any option": """""",
+    "Media Type Distribution": """
+    ### Media Type Distribution
+    - Pie chart showing distribution of media types (e.g., photo, video) of an influencer.
+    - Helps understand content preferences and posting habits.
+    """,
+    "Engagement Metrics": """
+    ### Engagement Metrics
+    - Line plot showing average likes, comments, and engagement rate over posts.
+    - Calculates engagement rate based on follower count to gauge audience interaction.
+    """,
+    "Impressions vs Reach Over Time": """
+    ### Impressions vs Reach Over Time
+    - Line plot comparing impressions and reach metrics over time.
+    - Insights into content visibility and audience reach trends.
+    """,
+    "Profile Views Over Time": """
+    ### Profile Views Over Time
+    - Line plot showing profile views of an influencer over time.
+    - Indicates visibility and interest in the influencer's profile.
+    """,
+    "Average Likes Per Week (Last 4 Months)": """
+    ### Average Likes Per Week (Last 4 Months)
+    - Line plot illustrating average likes per week for the last 4 months.
+    - Highlights trends in audience engagement and content performance.
+    """
+}
+
+# Selectbox for feature selection
+selected_feature = st.selectbox("Select Feature Overview to Understand Features", list(feature_overviews.keys()))
+
+# Display the selected feature overview
+st.markdown(feature_overviews[selected_feature])
 
 brand_user_id = os.getenv("INSTAGRAM_USER_ID")
 influencer_username = st.text_input('Enter Influencer Username:')
