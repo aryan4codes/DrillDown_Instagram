@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results for {{ influencer_username }}</title>
+</head>
+<body>
+    <h2>Results for {{ influencer_username }}</h2>
+
+    <h3>Evaluation</h3>
+    <p>Followers Count: {{ evaluation.followers_count }}</p>
+    <p>Total Media Count: {{ evaluation.media_count }}</p>
+    <p>Total Likes: {{ evaluation.total_likes }}</p>
+
+    <h4>Average Likes per Post</h4>
+    <img src="data:image/png;base64,{{ avg_likes_plot }}" alt="Average Likes per Post">
+    
+    <h4>Average Comments per Post</h4>
+    <img src="data:image/png;base64,{{ avg_comments_plot }}" alt="Average Comments per Post">
+    
+    <h4>Engagement Rate per Post</h4>
+    <img src="data:image/png;base64,{{ engagement_rate_plot }}" alt="Engagement Rate per Post">
+
+    {% if impressions_vs_reach %}
+    <h3>Impressions vs Reach Over Time</h3>
+    <img src="data:image/png;base64,{{ impressions_vs_reach }}" alt="Impressions vs Reach Over Time">
+    {% endif %}
+
+    {% if profile_views %}
+    <h3>Profile Views Over Time</h3>
+    <img src="data:image/png;base64,{{ profile_views }}" alt="Profile Views Over Time">
+    {% endif %}
+
+    <h3>Media Type Distribution</h3>
+    <img src="data:image/png;base64,{{ media_type_distribution }}" alt="Media Type Distribution">
+
+    <h3>Average Likes Per Week for Last 4 Months</h3>
+    <img src="data:image/png;base64,{{ avg_likes_per_week }}" alt="Average Likes Per Week">
+
+</body>
+</html>
