@@ -3,4 +3,6 @@ pandas
 requests
 seaborn
 streamlit
+wget
+google.generativeai
 python-dotenv
