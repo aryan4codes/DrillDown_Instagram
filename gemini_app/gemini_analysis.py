@@ -1,11 +1,4 @@
-"""
-Install the Google AI Python SDK
 
-$ pip install google-generativeai
-
-See the getting started guide for more information:
-https://ai.google.dev/gemini-api/docs/get-started/python
-"""
 
 import os
 from dotenv import load_dotenv
@@ -24,10 +17,8 @@ def upload_to_gemini(path, mime_type=None):
   print(f"Uploaded file '{file.display_name}' as: {file.uri}")
   return file
 
-# Create the model
-# See https://ai.google.dev/api/python/google/generativeai/GenerativeModel
 generation_config = {
-  "temperature": 1,
+  "temperature": 0.3,
   "top_p": 0.95,
   "top_k": 64,
   "max_output_tokens": 8192,
@@ -41,8 +32,6 @@ model = genai.GenerativeModel(
   # See https://ai.google.dev/gemini-api/docs/safety-settings
 )
 
-# TODO Make these files available on the local file system
-# You may need to update the file paths
 files = [
   upload_to_gemini("Unknown File", mime_type="application/octet-stream"),
   upload_to_gemini("Unknown File", mime_type="application/octet-stream"),
